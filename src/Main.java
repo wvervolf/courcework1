@@ -17,8 +17,8 @@ public class Main {
         listNames();
         System.out.println("Сумма зарплат сотрудников составляет: " + calculateSumOfSalarys());
         System.out.println("Средняя зарплата сотрудников составляет: " + calculateAverageSumOfSalarys());
-        System.out.println("Максимальная зарплата составляет: " + calculateMaxSumOfSalarys());
-        System.out.println("Минимальная зарплата составляет: " + calculateMinSumOfSalarys());
+        System.out.println("Сотрудник с максимальной зарплатой: " + calculateEmployeeMaxSumOfSalarys());
+        System.out.println("Сотрудник с минимальной зарплатой: " + calculateEmployeeMinSumOfSalarys());
     }
 
     public static void listInfo() {
@@ -49,22 +49,28 @@ public class Main {
         int averageSum = sum / employees.length;
         return averageSum;
     }
-    public static int calculateMaxSumOfSalarys() {
+
+    public static Employee calculateEmployeeMaxSumOfSalarys() {
+        Employee employeeWithMaxSalary = null;
         int maxSalary = Integer.MIN_VALUE;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > maxSalary) {
                 maxSalary = employees[i].getSalary();
+                employeeWithMaxSalary = employees[i];
             }
         }
-        return maxSalary;
+        return employeeWithMaxSalary;
     }
-    public static int calculateMinSumOfSalarys() {
+
+    public static Employee calculateEmployeeMinSumOfSalarys() {
+        Employee employeeWithMinSalary = null;
         int minSalary = Integer.MAX_VALUE;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < minSalary) {
                 minSalary = employees[i].getSalary();
+                employeeWithMinSalary = employees[i];
             }
         }
-        return minSalary;
+        return employeeWithMinSalary;
     }
 }
