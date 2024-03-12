@@ -15,10 +15,10 @@ public class Main {
 
         listInfo();
         listNames();
-        System.out.println(calculateSumOfSalarys());
-        System.out.println(calculateAverageSumOfSalarys());
-        System.out.println(calculateMaxSumOfSalarys());
-        System.out.println(calculateMinSumOfSalarys());
+        System.out.println("Сумма зарплат сотрудников составляет: " + calculateSumOfSalarys());
+        System.out.println("Средняя зарплата сотрудников составляет: " + calculateAverageSumOfSalarys());
+        System.out.println("Максимальная зарплата составляет: " + calculateMaxSumOfSalarys());
+        System.out.println("Минимальная зарплата составляет: " + calculateMinSumOfSalarys());
     }
 
     public static void listInfo() {
